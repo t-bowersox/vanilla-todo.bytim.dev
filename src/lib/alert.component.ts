@@ -1,4 +1,5 @@
 import feather from "feather-icons";
+import css from "./alert.component.css?raw"
 
 export class AlertComponent extends HTMLElement {
   private readonly type: AlertType;
@@ -27,9 +28,8 @@ export class AlertComponent extends HTMLElement {
       return;
     }
 
-    const styles = document.createElement("link");
-    styles.rel = "stylesheet";
-    styles.href = "./src/lib/alert.component.css";
+    const styles = document.createElement("style");
+    styles.innerHTML = css;
     this.shadowRoot.appendChild(styles);
   }
 
