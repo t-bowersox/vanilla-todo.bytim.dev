@@ -2,12 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" sizes="any" />
+    <link rel="icon" type="image/png" href="favicon.png" sizes="512x512" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <meta name="description" content="A demo todo app built using vanilla TypeScript">
+    <title>Todo App</title>
+    <script type="module" src="src/main.ts"></script>
+    <script type="module">
+      import { bootstrap } from "./src/main";
+
+      window.addEventListener("load", () => {
+        bootstrap();
+      });
+    </script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <header>
+      <h1>Todo App</h1>
+      <div class="subheading">
+        A demo todo app built using vanilla TypeScript.
+      </div>
+    </header>
+    <main>
+      <app-alert
+        data-type="warning"
+        data-heading="Head's up!"
+        id="disclaimer"
+        class="hidden"
+      >
+        This is just a practice project! Because I don't want to keep user data,
+        this app <em>only</em> stores data locally in your browser.
+      </app-alert>
+      <p><em>Features coming soon!</em></p>
+    </main>
+    <footer>
+      <span>&copy; 2022 <a href="https://bytim.dev">Tim Bowersox</a>.</span>
+      <span
+        >View code on
+        <a href="https://github.com/t-bowersox/vanilla-todo.bytim.dev">GitHub</a
+        >.</span
+      >
+    </footer>
+
+    <!-- Alert component template -->
+    <template id="alert-template">
+      <div class="alert">
+        <button class="alert-dismiss-btn" type="button" title="Dismiss alert">
+          X
+        </button>
+        <div class="alert-heading"></div>
+        <div class="alert-body">
+          <slot></slot>
+        </div>
+      </div>
+    </template>
   </body>
 </html>
