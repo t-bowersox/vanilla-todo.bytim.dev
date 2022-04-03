@@ -1,0 +1,43 @@
+.alert {
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.alert.warning {
+  border-color: var(--color-warning-border);
+  background-color: var(--color-warning-bg);
+}
+
+.alert.info {
+  border-color: var(--color-info-border);
+  background-color: var(--color-info-bg);
+}
+
+.alert.danger {
+  border-color: var(--color-danger-border);
+  background-color: var(--color-danger-bg);
+}
+
+.alert.success {
+  border-color: var(--color-success-border);
+  background-color: var(--color-success-bg);
+}
+
+.alert-dismiss-btn {
+  float: right;
+  margin: 0 0 0.5rem 0.5rem;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+}
+
+.alert-dismiss-btn:hover {
+  cursor: pointer;
+}
+
+.alert-heading {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
