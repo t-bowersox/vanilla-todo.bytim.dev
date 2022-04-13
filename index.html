@@ -20,16 +20,18 @@
       </div>
     </header>
     <main>
-      <app-alert
-        data-type="warning"
-        data-heading="Head's up!"
-        id="disclaimer"
-        class="hidden"
-      >
-        This is just a practice project! Because I don't want to keep user data,
-        this app <em>only</em> stores data locally in your browser.
-      </app-alert>
-      <p><em>Features coming soon!</em></p>
+      <div class="container">
+        <app-alert
+          data-type="warning"
+          data-heading="Head's up!"
+          id="disclaimer"
+          class="hidden"
+        >
+          This is just a practice project! Because I don't want to keep user
+          data, this app <em>only</em> stores data locally in your browser.
+        </app-alert>
+        <app-list></app-list>
+      </div>
     </main>
     <footer>
       <span>&copy; 2022 <a href="https://bytim.dev">Tim Bowersox</a>.</span>
