@@ -39,6 +39,8 @@
 }
 
 body {
+  background-color: var(--color-body-bg);
+  color: var(--color-body-text);
   font-family: var(--font-family-body);
   font-size: 1rem;
   padding: 0;
@@ -71,6 +73,11 @@ header > h1 {
   margin: 0;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -96,4 +103,8 @@ a:focus-visible {
 /* Classes */
 .hidden {
   display: none;
+}
+
+.container {
+  width: min(700px, 95%);
 }
