@@ -52,5 +52,21 @@
         </div>
       </div>
     </template>
+
+    <!-- List component template -->
+    <template id="list-template">
+      <div class="list">
+        <form id="add-task-form">
+          <label for="task-name">Add a new task</label>
+          <div class="field-group">
+            <input id="task-name" name="task-name" type="text" required />
+            <button type="submit" class="task-add-btn" title="Add task">+</button>
+          </div>
+        </form>
+        <ul id="list-tasks"></ul>
+        <div id="no-task-msg" aria-live="polite">
+        </div>
+      </div>
+    </template>
   </body>
 </html>

@@ -1,0 +1,64 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+form {
+  border-bottom: 2px solid  var(--color-header-border);
+  padding-bottom: 1rem;
+}
+
+.field-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  flex-grow: 1;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid var(--color-input-border);
+  border-radius: 5px;
+}
+
+.task-add-btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--color-primary-button-bg);
+  border-radius: 5px;
+  background-color: var(--color-primary-button-bg);
+  color: var(--color-primary-button-text);
+  transition: background-color 200ms ease-in, border-color 200ms ease-in;
+}
+
+.task-add-btn:is(:hover, :focus-visible) {
+  --color-primary-button-bg: var(--color-primary-button-bg-hover);
+}
+
+.task-add-btn:active {
+  --color-primary-button-bg: var(--color-primary-button-bg-active);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 1rem 0;
+}
+
+#no-task-msg {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
