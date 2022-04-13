@@ -2,9 +2,21 @@
   --font-family-heading: Helvetica, Arial, sans-serif;
   --font-family-body: Helvetica, Arial, sans-serif;
 
+  --color-body-bg: white;
+  --color-body-text: black;
   --color-header-bg: gainsboro;
   --color-header-text: black;
   --color-header-border: darkgray;
+  --color-input-border: var(--color-header-border);
+  --color-task-border: var(--color-header-border);
+  --color-primary-button-bg: dodgerblue;
+  --color-primary-button-bg-hover: hsl(210deg 100% 46%); /* dodgerblue -10% lightness */
+  --color-primary-button-bg-active: hsl(210deg 100% 46%); /* dodgerblue -10% lightness */
+  --color-primary-button-text: white;
+  --color-secondary-button-bg: gainsboro;
+  --color-secondary-button-bg-hover: hsl(0deg 0% 76%); /* gainsboro -10% lightness */
+  --color-secondary-button-bg-active: hsl(0deg 0% 96%); /* gainsboro +10% lightness */
+  --color-secondary-button-text: black;
   --color-warning-border: goldenrod;
   --color-warning-bg: lightgoldenrodyellow;
   --color-info-border: steelblue;
