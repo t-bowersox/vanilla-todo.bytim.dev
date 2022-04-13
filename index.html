@@ -68,5 +68,13 @@
         </div>
       </div>
     </template>
+
+    <!-- Task component template -->
+    <template id="task-template">
+      <li class="task">
+        <slot></slot>
+        <button type="button" id="complete-task" title="Complete task">✓</button>
+      </li>
+    </template>
   </body>
 </html>
