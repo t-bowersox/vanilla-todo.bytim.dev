@@ -1,7 +1,8 @@
 import feather from "feather-icons";
-import css from "./alert.component.css?raw"
+import css from "./alert.component.css?raw";
+import { BaseComponent } from "./base.component";
 
-export class AlertComponent extends HTMLElement {
+export class AlertComponent extends BaseComponent {
   private readonly type: AlertType;
   private readonly heading: string;
 
@@ -11,9 +12,8 @@ export class AlertComponent extends HTMLElement {
     this.type = <AlertType>this.dataset.type ?? "info";
     this.heading = this.dataset.heading ?? "Alert";
 
-    this.attachShadow({ mode: "open" });
-    this.setStyles();
-    this.setTemplate();
+    this.setStyles(css);
+    this.setTemplate("alert-template");
     this.setAlertClass();
     this.setHeadingText();
     this.initDismissButton();
@@ -21,16 +21,6 @@ export class AlertComponent extends HTMLElement {
 
   private dismiss(): void {
     this.remove();
-  }
-
-  private setStyles(): void {
-    if (!this.shadowRoot) {
-      return;
-    }
-
-    const styles = document.createElement("style");
-    styles.innerHTML = css;
-    this.shadowRoot.appendChild(styles);
   }
 
   private setAlertClass(): void {
@@ -42,31 +32,6 @@ export class AlertComponent extends HTMLElement {
       ".alert"
     ) as HTMLDivElement;
     alertContainer.classList.add(this.type);
-  }
-
-  private setTemplate(): void {
-    if (!this.shadowRoot) {
-      return;
-    }
-
-    const template = AlertComponent.getTemplateContents();
-    if (!template) {
-      return;
-    }
-
-    this.shadowRoot.appendChild(template.cloneNode(true));
-  }
-
-  private static getTemplateContents(): DocumentFragment | null {
-    const templateEl = document.getElementById(
-      "alert-template"
-    ) as HTMLTemplateElement | null;
-
-    if (!templateEl) {
-      return null;
-    }
-
-    return templateEl.content;
   }
 
   private setHeadingText(): void {

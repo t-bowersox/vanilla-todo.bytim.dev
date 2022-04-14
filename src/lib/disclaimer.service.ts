@@ -5,7 +5,8 @@ export class DisclaimerService {
       return;
     }
 
-    const dismissBtn = disclaimer.shadowRoot?.querySelector(".alert-dismiss-btn");
+    const dismissBtn =
+      disclaimer.shadowRoot?.querySelector(".alert-dismiss-btn");
     if (!dismissBtn) {
       return;
     }
