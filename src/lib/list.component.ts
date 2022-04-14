@@ -7,7 +7,8 @@ import { TasksService } from "./tasks.service";
 import feather from "feather-icons";
 
 export class ListComponent extends BaseComponent {
-  private noTasksMsg = 'Your task list is empty! Use the form above to add a new task to your list.';
+  private noTasksMsg =
+    "Your task list is empty! Use the form above to add a new task to your list.";
 
   constructor() {
     super();
@@ -20,12 +21,14 @@ export class ListComponent extends BaseComponent {
     this.initCompleteListener();
   }
 
-  private displayNoTasksMsg(text: string|null): void {
+  private displayNoTasksMsg(text: string | null): void {
     if (!this.shadowRoot) {
       return;
     }
 
-    const msg = this.shadowRoot.getElementById('no-task-msg') as HTMLDivElement | null;
+    const msg = this.shadowRoot.getElementById(
+      "no-task-msg"
+    ) as HTMLDivElement | null;
 
     if (!msg) {
       return;
@@ -40,9 +43,7 @@ export class ListComponent extends BaseComponent {
       {
         name: "todos",
         options: { keyPath: "id", autoIncrement: true },
-        indexes: [
-          { name: "name", keyPath: "name" },
-        ],
+        indexes: [{ name: "name", keyPath: "name" }],
       },
     ]);
 
@@ -134,7 +135,7 @@ export class ListComponent extends BaseComponent {
         return;
       }
 
-      const taskIndex = this._tasks.findIndex(task => task.id === taskId);
+      const taskIndex = this._tasks.findIndex((task) => task.id === taskId);
       this._tasks.splice(taskIndex, 1);
       this.deleteTaskFromList(taskId);
 

@@ -62,12 +62,13 @@
           <label for="task-name">Add a new task</label>
           <div class="field-group">
             <input id="task-name" name="task-name" type="text" required />
-            <button type="submit" class="task-add-btn" title="Add task">+</button>
+            <button type="submit" class="task-add-btn" title="Add task">
+              +
+            </button>
           </div>
         </form>
         <ul id="list-tasks"></ul>
-        <div id="no-task-msg" aria-live="polite">
-        </div>
+        <div id="no-task-msg" aria-live="polite"></div>
       </div>
     </template>
 
@@ -75,7 +76,9 @@
     <template id="task-template">
       <li class="task">
         <slot></slot>
-        <button type="button" id="complete-task" title="Complete task">✓</button>
+        <button type="button" id="complete-task" title="Complete task">
+          ✓
+        </button>
       </li>
     </template>
   </body>

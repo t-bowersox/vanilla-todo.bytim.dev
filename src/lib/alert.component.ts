@@ -1,5 +1,5 @@
 import feather from "feather-icons";
-import css from "./alert.component.css?raw"
+import css from "./alert.component.css?raw";
 import { BaseComponent } from "./base.component";
 
 export class AlertComponent extends BaseComponent {
@@ -13,7 +13,7 @@ export class AlertComponent extends BaseComponent {
     this.heading = this.dataset.heading ?? "Alert";
 
     this.setStyles(css);
-    this.setTemplate('alert-template');
+    this.setTemplate("alert-template");
     this.setAlertClass();
     this.setHeadingText();
     this.initDismissButton();

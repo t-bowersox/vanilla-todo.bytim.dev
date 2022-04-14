@@ -65,10 +65,7 @@ export class IndexedDBService implements DatabaseServiceInterface {
     });
   }
 
-  public create<T>(
-    record: T,
-    collection: string
-  ): Promise<string | number> {
+  public create<T>(record: T, collection: string): Promise<string | number> {
     return new Promise((resolve, reject) => {
       if (!this.db) {
         return reject("Unable to create record: no open database.");
@@ -86,7 +83,7 @@ export class IndexedDBService implements DatabaseServiceInterface {
 
   public read<T>(
     collection: string,
-    query?: string | number,
+    query?: string | number
   ): Promise<Array<T>> {
     return new Promise((resolve, reject) => {
       if (!this.db) {
